@@ -3,6 +3,7 @@ public class LibraryMain {
         Library library = new Library();
         library.addBook("The Great Gatsby");
         System.out.println("Books in library: " + library.getBooks());
+        System.out.println(library.issueBook("1984"));
         System.out.println(library.searchBook("1984"));
     }
 }

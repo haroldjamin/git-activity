@@ -14,6 +14,7 @@ public class Library {
         return books;
     }
 
+    // Method to issue a book
     public String issueBook(String book) {
         if (books.contains(book) && !issuedBooks.contains(book)) {
             issuedBooks.add(book);
@@ -24,6 +25,7 @@ public class Library {
         }
     }
 
+    // Method to return a book
     public String returnBook(String book) {
         if (issuedBooks.contains(book)) {
             issuedBooks.remove(book);
@@ -31,6 +33,15 @@ public class Library {
             return "Book returned: " + book;
         } else {
             return "Book was not issued.";
+        }
+    }
+
+    // Method to search for a book
+    public String searchBook(String book) {
+        if (books.contains(book)) {
+            return "Book found: " + book;
+        } else {
+            return "Book not found";
         }
     }
 }

@@ -13,7 +13,8 @@ public class Library {
     public List<String> getBooks() {
         return books;
     }
-        // New method to issue a book
+
+    // Method to issue a book
     public String issueBook(String book) {
         if (books.contains(book) && !issuedBooks.contains(book)) {
             issuedBooks.add(book);
@@ -21,6 +22,15 @@ public class Library {
             return "Book issued: " + book;
         } else {
             return "Book not available for issuance.";
+        }
+    }
+
+    // Method to search for a book
+    public String searchBook(String book) {
+        if (books.contains(book)) {
+            return "Book found: " + book;
+        } else {
+            return "Book not found";
         }
     }
 }

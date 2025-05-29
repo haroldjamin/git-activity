@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Library {
     private List<String> books = new ArrayList<>();
+    private List<String> issuedBooks = new ArrayList<>(); // New list to track issued books
 
     public void addBook(String book) {
         books.add(book);
@@ -11,5 +12,15 @@ public class Library {
 
     public List<String> getBooks() {
         return books;
+    }
+        // New method to issue a book
+    public String issueBook(String book) {
+        if (books.contains(book) && !issuedBooks.contains(book)) {
+            issuedBooks.add(book);
+            books.remove(book);
+            return "Book issued: " + book;
+        } else {
+            return "Book not available for issuance.";
+        }
     }
 }

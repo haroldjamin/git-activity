@@ -44,4 +44,10 @@ public class Library {
             return "Book not found";
         }
     }
+
+    // Method to view catalog
+    public void viewCatalog() {
+        System.out.println("Available books: " + books);
+        System.out.println("Issued books: " + issuedBooks);
+    }
 }

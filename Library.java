@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Library {
     private List<String> books = new ArrayList<>();
-    private List<String> issuedBooks = new ArrayList<>();
+    private List<String> issuedBooks = new ArrayList<>(); // Track issued books
 
     public void addBook(String book) {
         books.add(book);
@@ -14,14 +14,7 @@ public class Library {
         return books;
     }
 
-    public String searchBook(String book) {
-        if (books.contains(book)) {
-            return "Book found: " + book;
-        } else {
-            return "Book not found";
-        }
-    }
-
+    // Method to issue a book
     public String issueBook(String book) {
         if (books.contains(book) && !issuedBooks.contains(book)) {
             issuedBooks.add(book);
@@ -32,6 +25,7 @@ public class Library {
         }
     }
 
+    // Method to return a book
     public String returnBook(String book) {
         if (issuedBooks.contains(book)) {
             issuedBooks.remove(book);
@@ -42,6 +36,16 @@ public class Library {
         }
     }
 
+    // Method to search for a book
+    public String searchBook(String book) {
+        if (books.contains(book)) {
+            return "Book found: " + book;
+        } else {
+            return "Book not found";
+        }
+    }
+
+    // Method to view catalog
     public void viewCatalog() {
         System.out.println("Available books: " + books);
         System.out.println("Issued books: " + issuedBooks);

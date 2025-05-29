@@ -6,10 +6,16 @@ public class LibraryMain {
         library.addBook("The Great Gatsby");
         library.addBook("1984");
 
-        // Issue one book
-        library.issueBook("1984");
+        // Issue a book
+        System.out.println(library.issueBook("1984"));
 
-        // View full catalog
+        // Return a book
+        System.out.println(library.returnBook("The Great Gatsby"));
+
+        // Search for a book
+        System.out.println(library.searchBook("1984"));
+
+        // View catalog
         library.viewCatalog();
     }
 }

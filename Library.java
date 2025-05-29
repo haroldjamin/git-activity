@@ -12,4 +12,13 @@ public class Library {
     public List<String> getBooks() {
         return books;
     }
+
+    // New searchBook method
+    public String searchBook(String book) {
+        if (books.contains(book)) {
+            return "Book found: " + book;
+        } else {
+            return "Book not found";
+        }
+    }
 }
